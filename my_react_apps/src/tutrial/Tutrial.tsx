@@ -2,18 +2,17 @@ import React from 'react'
 // import ReactDOM from 'react-dom'
 
 import './Tutrial.css'
-// import { FeeClassification, DetailProps } from './TutrialTypes'
+import { DetailProps } from './TutrialTypes'
 
-class Detail extends React.Component {
+class Detail extends React.Component<DetailProps, {}> {
     render() {
       return (
         <div >
-          <div className="classification-name">名前</div>
-          <div className="description">説明</div>
-          <div className="unit-price">0円</div>
+          <div className="classification-name">{this.props.classification.name}</div>
+          <div className="description">{this.props.classification.description}</div>
+          <div className="unit-price">{this.props.classification.unitPrice}</div>
           <div className="num-people">
-            <select value="0">
-              <option value="0">0</option>
+            <select value={this.props.classification.numOfPeople}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
