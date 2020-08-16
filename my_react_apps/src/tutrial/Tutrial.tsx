@@ -1,8 +1,8 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 
 import './Tutrial.css'
-import { FeeClassification, DetailProps } from './TutrialTypes'
+// import { FeeClassification, DetailProps } from './TutrialTypes'
 
 
 
