@@ -2,9 +2,7 @@ import React from 'react'
 // import ReactDOM from 'react-dom'
 
 import './Tutrial.css'
-// import { FeeClassification, DetailProps } from './TutrialTypes'
-
-
+import { FeeClassification, DetailProps } from './TutrialTypes'
 
 class Detail extends React.Component {
     render() {
