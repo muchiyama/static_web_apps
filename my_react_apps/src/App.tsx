@@ -1,5 +1,6 @@
 import React from 'react';
-import Default from './tutrial/Default'
+import DefaultPage from './tutrial/DefaultPage'
+
 
 import { BrowserRouter, Route } from "react-router-dom";
 import AdmissionFeeCalculator from './tutrial/Tutrial'
@@ -7,7 +8,7 @@ import AdmissionFeeCalculator from './tutrial/Tutrial'
 function App() {
   return (
     <BrowserRouter>
-        <Route exact path='/' component={Default}/>
+        <Route exact path='/' component={DefaultPage}/>
         <Route exact path='/tutrial' component={AdmissionFeeCalculator}/>
     </BrowserRouter>
   );

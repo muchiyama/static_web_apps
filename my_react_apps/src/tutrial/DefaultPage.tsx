@@ -1,9 +1,9 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 import logo from '../logo.svg';
 import '../App.css';
 
-class Default extends React.Component {
+class DefaultPage extends React.Component {
     render() {
         return (
             <div className="App">
@@ -26,4 +26,4 @@ class Default extends React.Component {
     }
 }
 
-export default Default
+export default DefaultPage
