@@ -1,0 +1,14 @@
+{
+    "routes": [
+      {
+        "route": "/",
+        "serve": "/",
+        "statusCode": 200
+      },
+      {
+        "route": "/tutrial",
+        "serve": "/tutrial",
+        "statusCode": 200
+      }
+    ]
+  }
