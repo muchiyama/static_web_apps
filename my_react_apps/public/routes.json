@@ -11,5 +11,12 @@
         "allowedRoles": ["admin"],
         "statusCode": 200
       }
+    ],
+    "platformErrorOverrides": [
+      {
+        "errorType": "Unauthenticated",
+        "statusCode": "302",
+        "serve": "/login"
+      }
     ]
   }
