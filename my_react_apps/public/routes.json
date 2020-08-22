@@ -8,7 +8,7 @@
       },
       {
         "route": "/login",
-        "serve": "/.auth/login/aad",
+        "serve": "/.auth/login/google",
         "statusCode": 200
       },
       {
