@@ -2,7 +2,6 @@
 import React from 'react'
 import logo from '../logo.svg';
 import '../App.css';
-
 import { Link } from "react-router-dom";
 
 class DefaultPage extends React.Component {
