@@ -2,12 +2,17 @@
     "routes": [
       {
         "route": "/",
+        "serve": "/",
+        "statusCode": 200
+      },
+      {
+        "route": "/login",
         "serve": "/.auth/login/aad",
         "statusCode": 200
       },
       {
         "route": "/tutrial",
-        "serve": "/tutrial",
+        "serve": "/Index.html/tutrial",
         "statusCode": 200
       }
     ]
