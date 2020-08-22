@@ -6,7 +6,7 @@
         "statusCode": 200
       },
       {
-        "route": "/*",
+        "route": "/index/*",
         "serve": "/Index.html",
         "allowedRoles": ["admin"],
         "statusCode": 200
