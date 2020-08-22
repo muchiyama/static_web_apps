@@ -6,8 +6,12 @@
         "statusCode": 200
       },
       {
-        "route": "/index/*",
-        "serve": "/Index.html",
+        "route": "/logout",
+        "serve": "/.auth/logout"
+      },
+      {
+        "route": "/*",
+        "serve": "/index.html",
         "allowedRoles": ["admin"],
         "statusCode": 200
       }
@@ -17,6 +21,11 @@
         "errorType": "Unauthenticated",
         "statusCode": "302",
         "serve": "/login"
+      },
+      {
+        "errorType": "NotFound",
+        "statusCode": "302",
+        "serve": "/Index.html"
       }
     ]
   }
