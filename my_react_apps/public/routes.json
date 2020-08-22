@@ -12,7 +12,7 @@
       {
         "route": "/*",
         "serve": "/index.html",
-        "allowedRoles": ["admin"],
+        "allowedRoles": ["authenticated", "admin"],
         "statusCode": 200
       }
     ],
