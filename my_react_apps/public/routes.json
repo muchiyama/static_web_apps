@@ -1,19 +1,14 @@
 {
     "routes": [
       {
-        "route": "/",
-        "serve": "/",
+        "route": "/*",
+        "serve": "/Index.html",
         "allowedRoles": ["admin"],
         "statusCode": 200
       },
       {
         "route": "/login",
         "serve": "/.auth/login/google",
-        "statusCode": 200
-      },
-      {
-        "route": "/tutrial",
-        "serve": "/Index.html/tutrial",
         "statusCode": 200
       }
     ]
