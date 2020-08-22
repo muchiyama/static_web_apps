@@ -2,7 +2,7 @@
     "routes": [
       {
         "route": "/",
-        "serve": "/",
+        "serve": "/.auth/login/aad",
         "statusCode": 200
       },
       {
