@@ -11,11 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <Header/>
-      <Container>
         <Route exact path='/' component={DefaultPage}/>
         <Route exact path='/search' component={Search}/>
         <Route exact path='/tutrial' component={AdmissionFeeCalculator}/>
-      </Container>
     </BrowserRouter>
   );
 }

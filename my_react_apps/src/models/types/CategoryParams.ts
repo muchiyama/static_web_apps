@@ -2,7 +2,8 @@ import { SkillCategory } from '../enums/SkillCategory'
 
 export type CategoryProps = {
     DefaultSelected: SkillCategory,
-    Categories: CategoryButtonProp[]
+    Categories: CategoryButtonProp[],
+    EmitChangedCategory?: (Category: CategoryState) => void
 }
 
 export type CategoryState = {

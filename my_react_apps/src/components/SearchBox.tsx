@@ -27,6 +27,14 @@ class SearchBox extends React.Component {
         ];
     }
 
+    
+    private handleChange = (e: any) => {
+        let a = Array.isArray(e) ? e.map(x => x.value) : [];
+        console.log(a);
+    }
+
+
+
     render () {
         return (
             <>
@@ -40,6 +48,7 @@ class SearchBox extends React.Component {
                     isSearchable
                     placeholder="Search..."
                     styles={my_styles}
+                    onChange={ this.handleChange }
                 />
             </>
         )

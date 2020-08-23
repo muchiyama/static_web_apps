@@ -18,8 +18,13 @@ class CategoryGroup extends React.Component<CategoryProps, CategoryState> {
     constructor(props: CategoryProps) {
         super(props);
         this.state = { CurrentSelected: props.DefaultSelected };
-        console.log(props);
     }
+
+    private handleCategoryChange = (e: any) => {
+        this.setState({ CurrentSelected: parseInt(e.target.value)});
+        if(this.props.EmitChangedCategory !== undefined)
+            this.props.EmitChangedCategory(this.state);
+    } 
 
     render () {
         const categories = this.props.Categories.map((c, idx) => 
@@ -33,7 +38,7 @@ class CategoryGroup extends React.Component<CategoryProps, CategoryState> {
                     value={c.CategoryValue}
                     checked={ c.CategoryValue === this.state.CurrentSelected}
                     style={{ color: this.state.CurrentSelected === c.CategoryValue ? "white" : c.Style.color, background: this.state.CurrentSelected === c.CategoryValue ? c.Style.color : "white" }}
-                    onChange={ e => this.setState({ CurrentSelected: parseInt(e.target.value)}) }
+                    onChange={ this.handleCategoryChange }
                 >
                     {c.CategoryName}
               </ToggleButton>
