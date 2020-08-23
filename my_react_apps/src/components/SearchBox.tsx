@@ -1,12 +1,14 @@
 import React from 'react';
 import CreatableSelect from 'react-select/creatable';
-import { components } from 'react-select';
+// import { components } from 'react-select';
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faHourglass } from "@fortawesome/free-regular-svg-icons";
 
 const my_styles: any = {
     option: (provided: any[], state: any) => ({
         ...provided,
         borderBottom: '1px dotted pink',
-        color: state ? 'red' : 'blue',
+        color: 'blue',
         padding: 20,
     }),
     control: (provided: any[]) => ({
@@ -14,16 +16,6 @@ const my_styles: any = {
         // none of react-select's styles are passed to <Control />
     }),
 }
-
-const DropdownIndicator = (
-    props: any
-  ) => {
-    return (
-            <components.IndicatorsContainer onClick={() => console.log("clicked")} {...props} styles={{display: "none"}}>
-                <span onClick={(e: any) => console.log("clicked")}>Click</span>
-            </components.IndicatorsContainer>
-    );
-};
 
 class SearchBox extends React.Component {
     private CreateOptions(): any {
@@ -41,10 +33,12 @@ class SearchBox extends React.Component {
                 <CreatableSelect 
                     options={this.CreateOptions()}
                     closeMenuOnSelect={false}
-                    components={{ DropdownIndicator }}
+                    // components={{ DropdownIndicator }}
+                    components={{ IndicatorSeparator: () => null }}
                     isMulti
                     CreatableSelect={true}
                     isSearchable
+                    placeholder="Search..."
                     styles={my_styles}
                 />
             </>

@@ -1,21 +1,54 @@
 import React from 'react';
 import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 import { SkillCategory } from '../models/enums/SkillCategory'
+import { CategoryProps, CategoryState } from '../models/types/CategoryParams'
 
-class CategoryGroup extends React.Component {
+class CategoryGroup extends React.Component<CategoryProps, CategoryState> {
+    public static defaultProps: CategoryProps = {
+        DefaultSelected: SkillCategory.Users,
+        Categories: [
+            { CategoryName:  "社員検索", CategoryValue: SkillCategory.Users, Style: {color: "#6f42c1", margin: "1px"}},
+            { CategoryName:  "開発スキル", CategoryValue: SkillCategory.DevSkill, Style: {color: "#ff7fbf", margin: "1px"}},
+            { CategoryName:  "経験ポジション", CategoryValue: SkillCategory.ProjectPosision, Style: {color: "#7fbfff", margin: "1px"}},
+            { CategoryName:  "資格", CategoryValue: SkillCategory.Certification, Style: {color: "#7fff7f", margin: "1px"}},
+            { CategoryName:  "経験業務", CategoryValue: SkillCategory.Industry, Style: {color: "#ffbf7f", margin: "1px"}},
+        ]
+    }
+
+    constructor(props: CategoryProps) {
+        super(props);
+        this.state = { CurrentSelected: props.DefaultSelected };
+        console.log(props);
+    }
+
     render () {
+        const categories = this.props.Categories.map((c, idx) => 
+            {
+                return(
+                <ToggleButton
+                    key={idx}
+                    type="radio"
+                    variant="light"
+                    name="radio"
+                    value={c.CategoryValue}
+                    checked={ c.CategoryValue === this.state.CurrentSelected}
+                    style={{ color: this.state.CurrentSelected === c.CategoryValue ? "white" : c.Style.color, background: this.state.CurrentSelected === c.CategoryValue ? c.Style.color : "white" }}
+                    onChange={ e => this.setState({ CurrentSelected: parseInt(e.target.value)}) }
+                >
+                    {c.CategoryName}
+              </ToggleButton>
+                )
+            });
+
         return (
             <>
                 <ButtonGroup toggle>
-                    <ToggleButton type="radio" variant="light" value={SkillCategory.Users} style={{color: "#6f42c1", margin: "1px"}}>社員検索</ToggleButton>
-                    <ToggleButton type="radio" variant="light" value={SkillCategory.DevSkill} style={{color: "#ff7fbf", margin: "1px"}}>開発スキル</ToggleButton>
-                    <ToggleButton type="radio" variant="light" value={SkillCategory.ProjectPosision} style={{color: "#7fbfff", margin: "1px"}}>経験ポジション</ToggleButton>
-                    <ToggleButton type="radio" variant="light" value={SkillCategory.Certification} style={{color: "#7fff7f", margin: "1px"}}>資格</ToggleButton>
-                    <ToggleButton type="radio" variant="light" value={SkillCategory.Industry} style={{color: "#ffbf7f", margin: "1px"}}>経験業務</ToggleButton>
+                    {categories}
                 </ButtonGroup>
             </>
         )
     }
+
 }
 
 export default CategoryGroup
