@@ -11,15 +11,9 @@ class Search extends React.Component {
                 <Row style={{height: "10px"}}></Row>
                 <Row>
                     <Col></Col>
-                    <Col xs={8}>
+                    <Col xs={12} lg={8}>
                         <CategoryGroup/>
                         <SearchBox/>
-                    </Col>
-                    <Col></Col>
-                </Row>
-                <Row>
-                    <Col></Col>
-                    <Col xs={8}>
                         <SearchResult/>
                     </Col>
                     <Col></Col>

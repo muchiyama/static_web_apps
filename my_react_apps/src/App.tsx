@@ -10,7 +10,7 @@ import AdmissionFeeCalculator from './tutrial/Tutrial'
 function App() {
   return (
     <BrowserRouter>
-      <Header></Header>
+      <Header/>
       <Container>
         <Route exact path='/' component={DefaultPage}/>
         <Route exact path='/search' component={Search}/>
